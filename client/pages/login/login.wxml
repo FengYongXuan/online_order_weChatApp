@@ -1,0 +1,30 @@
+<!--client/pages/login.wxml-->
+<!--启动界面-->
+<view class='container'>
+  <!-- 加载开始 -->
+  <view class='loading-box' wx:if="{{}}">
+    <image class='loading-img' src='/images/loading.gif'></image>
+  </view>
+  <!-- 加载结束 -->
+  <block wx:else>
+    <image class='show-img' src='/images/logo.jpeg'></image>
+    <!-- 头像及动画 -->
+    <view class='content'>
+      <!-- 有网 已验证 -->
+      <view wx:if="{{(hasUserInfo || !canIUse)}}">
+        <image class='avatar' src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      </view>
+      <view wx:else>
+        <image class='avatar' src='/images/unloading.png'></image>
+      </view>
+      <!-- 设置波浪线 -->
+      <image class='wave-img' src='/images/wave1.gif'></image>
+      <button class='click-btn' type='primary' bindtap='joinPage'>
+      立即点餐
+      </button>
+      <view wx:if="{{isAdmin}}" class="admim-text" bindtap="openadmin" >管理员模式</view>
+      <view wx:else class="admim-text2"></view>
+      <text class='copyright'>@干饭人联盟</text>
+    </view>
+  </block>
+</view>

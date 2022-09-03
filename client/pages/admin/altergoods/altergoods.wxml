@@ -1,0 +1,44 @@
+<view class="container">
+   <image class='head-img' src='{{file_path}}'></image>
+  <!--菜品信息表单-->
+  <form bindsubmit="submit">
+    <view class="input-box">
+      <view class="weui-cells__title">菜品名称 :</view>
+      <input class="weui-input" name='foodname' value="{{foodinfo.GNAME}}" />
+    </view>
+    <view class="input-box">
+      <view class="weui-cells__title">选择菜品类别:</view>
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+          <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+            <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+          </view>
+        </label>
+        <view class="weui-cell weui-cell_link">
+          <view class="weui-cell__bd myfont1" bindtap="addmore">添加更多菜品种类:</view>
+        </view>
+      </radio-group>
+    </view>
+    <view class="input-box">
+      <form bindsubmit="submitmore" wx:if="{{moreflag}}">
+        <view class="weui-cells__title">新类别名称 :</view>
+        <input class="weui-input" name='typename' placeholder="请输入新菜品名称：" />
+        <button class="weui-btn" type="primary" form-type='submit'>确定</button>
+      </form>
+    </view>
+    <view class="input-box">
+      <view class="weui-cells__title">菜品价格 :</view>
+      <input class="weui-input" name='foodprice' value="{{foodinfo.GPRICE}}" />
+    </view>
+    <view class="input-box">
+      <view class="weui-cells__title">描述 :</view>
+      <textarea class="weui-textarea" name='fooddiscribe' value="{{foodinfo.GINFO}}" style="min-height: 3.3em" />
+      <view class="weui-textarea-counter">0/50</view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" form-type='submit'>提交</button>
+    </view>
+  </form>
+</view>

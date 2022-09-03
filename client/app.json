@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/menu/menu",
+    "pages/usermenu/usermenu",
+    "pages/pay/pay",
+    "pages/admin/home/home",
+    "pages/admin/addgoods/addgoods",
+    "pages/admin/altergoods/altergoods",
+    "pages/order/order"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "干饭人联盟",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

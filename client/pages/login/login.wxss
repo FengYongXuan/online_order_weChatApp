@@ -1,0 +1,145 @@
+/* client/pages/login.wxss */
+page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 0px;
+}
+
+.logo-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  transform: translate3d(0, 100%, 0);
+  animation: rise 3s cubic-bezier(0.19, 1, 0.22, 1) 0.25s forwards;
+  opacity: 0;
+}
+
+/*上升动画*/
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0rpx, 0);
+  }
+}
+.show-img {
+  width: 400rpx;
+  height: 400rpx;
+}
+.avatar {
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+  box-shadow: 3rpx 3rpx 10rpx rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 50rpx;
+  z-index: 2;
+  animation: sway 10s ease-in-out infinite;
+}
+
+/*摆动动画*/
+@keyframes sway {
+  0% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+
+  17% {
+    transform: translate3d(0, 0rpx, 0) rotate(25deg);
+  }
+
+  34% {
+    transform: translate3d(0, -20rpx, 0) rotate(-20deg);
+  }
+
+  50% {
+    transform: translate3d(0, -10rpx, 0) rotate(15deg);
+  }
+
+  67% {
+    transform: translate3d(0, 10rpx, 0) rotate(-25deg);
+  }
+
+  84% {
+    transform: translate3d(0, 15rpx, 0) rotate(15deg);
+  }
+
+  100% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+}
+
+.wave-img {
+  height: 400rpx;
+  width: 500rpx;
+  margin-top: -100rpx;
+  border-radius: 20%;
+  box-shadow: 5rpx 5rpx slategrey;
+  margin-bottom:60rpx;
+}
+
+.click-btn{
+  font-size:35rpx;
+  text-align: center;
+  opacity: 0.8;
+  width: 400rpx;
+  height: 80rpx;
+}
+
+.click-btn:active {
+  opacity: 0.5;
+}
+
+.copyright {
+  margin-top: 55rpx;
+  font-size: 25rpx;
+  opacity: 0.8;
+}
+.weui-btn-area
+{
+  margin:0;
+  z-index: 2;
+}
+.admim-text
+{
+  font-size: 25rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+.admim-text2
+{
+  margin-top: 30rpx;
+}

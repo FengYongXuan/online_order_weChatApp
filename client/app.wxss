@@ -1,0 +1,9 @@
+/**app.wxss**/
+@import '/style/weui.wxss'; /*weui文件*/
+
+.container {
+    display: flex;          /*弹性布局*/
+    flex-direction: column;  
+    align-items: center;    /*弹性容器内的项目都居中对齐*/
+    box-sizing: border-box; /*把padding和border都算在content的宽高里*/
+}

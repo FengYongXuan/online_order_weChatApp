@@ -1,0 +1,23 @@
+/**index.wxss**/
+/* pages/index/index.wxss */
+.content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .click-btn {
+    width: 80%;
+  }
+  .shows-img {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 65%;
+  }
+  .gettitle{
+    font-size: larger;
+  }
+  .getinfo{
+    margin: 10px 0;
+    font-size: small;
+  }
