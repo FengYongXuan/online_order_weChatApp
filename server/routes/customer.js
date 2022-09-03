@@ -25,7 +25,7 @@ router.get('/getopenid', function(req, res, next) {
   var param = req.query || req.params;
   var code = param.code;
   var appid = param.appid;
-  var secret = '5bab9408bd1870e1628b074fb3d3886e'; //设置自己微信小程序的AppSecret
+  var secret = 'xxx'; //设置自己微信小程序的AppSecret
   var wx_url = 'https://api.weixin.qq.com/sns/jscode2session?appid='+ appid +'&secret=' + secret + '&js_code='
   + code + '&grant_type=authorization_code';
   request(wx_url, function (error, response, body) {
