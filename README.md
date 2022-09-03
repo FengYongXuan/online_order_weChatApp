@@ -18,7 +18,7 @@
 
 ④npm install
 
-   npm start
+⑤npm start
 
 ## 技术栈
 
