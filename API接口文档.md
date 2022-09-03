@@ -17,23 +17,23 @@
 
 - 响应数据
 
-{
+```
 成功返回：
 {
-  "openid": 'xxxxxxxxxxx',
-  "result": { 
-    "code": 200, 
-    "msg": '授权成功' 
-  }
+   "openid": 'xxxxxxxxxxx',
+   "result": { 
+       "code": 200, 
+       "msg": '授权成功' 
+   }
 }
 失败返回：
 {
-    "result": {
+   "result": {
         "code": -1,
         "msg": "授权失败"
     }
 }
-}
+```
 
 ##### 1.2. 登录
 
