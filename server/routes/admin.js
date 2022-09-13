@@ -4,9 +4,9 @@ var mysql = require('mysql');
 var uuid = require('uuid');
 var path = require("path");
 var fs = require("fs");
-var formidable = require("formidable")
+var formidable = require("formidable");
 var menuSql = require("../db/menuSql");
-var orderSql = require('../db/orderSql')
+var orderSql = require('../db/orderSql');
 var dbConfig = require('../db/dbConfig');
 
 // 创建连接池
@@ -32,8 +32,8 @@ router.get('/search', function (req, res, next) {
         turnover: 0.0
     };
     var turnover = 0.0;
-    var customer_num = 0;
     var _res = res;
+    var customer_num_set = new Set();
     // 查询所有完成的订单
     pool.getConnection((err, connection) => {
         connection.query(orderSql.queryOverOrders, function (err, res) {
@@ -45,11 +45,11 @@ router.get('/search', function (req, res, next) {
                     var month = (orderDate.getMonth() + 1 < 10 ? '0' + (orderDate.getMonth() + 1) : orderDate.getMonth() + 1);
                     var day= orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
                     if (date == (year+"-"+month+"-"+day)) {
-                        customer_num++;
+                        customer_num_set.add(res[i].CUSID);  // 记录就餐人数,用set集合去重
                         turnover += res[i].ORDERTOTALPRICE;
                     }
                 }
-                data.customer_num = customer_num;
+                data.customer_num = customer_num_set.size;
                 data.turnover = turnover;
             }
         })
